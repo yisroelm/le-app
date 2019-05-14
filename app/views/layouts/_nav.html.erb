@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <%  if !le_signed_in? %>
+      <li><%= link_to "Sign Up", new_le_registration_path %></li>
+      <li><%= link_to "Sign In", new_le_session_path %></li>
+    <% else %>
+      <li><%= link_to "Edit Account", edit_le_registration_path%></li>
+      <li><%= link_to "Log Out", destroy_le_session_path, method: :delete %></li>
+    <% end %>
+  </ul>
+</nav>

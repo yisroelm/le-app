@@ -1,0 +1,4 @@
+<h1>Welcome to esttn app!</h1>
+<% if le_signed_in? %>
+  <h2>Hello, <%= current_le.email.split("@")[0] %></h2>
+<% end %>

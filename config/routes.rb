@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :appointments, :products, :clients
 
   resources :clients do
-      resources :products
+      resources :products, only: [:index, :show, :new, :edit]
     end
 end

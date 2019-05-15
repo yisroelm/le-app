@@ -1,10 +1,10 @@
-<h1>Create a Product</h1>
+<h1>Edit a Product</h1>
 
 <%= form_for @product  do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :client %>
-  <%= f.collection_select :client_id, Client.all, :id, :name %>
+  <%= f.collection_select :client_id, Client.all, :id, :first_name %>
   <br />
 
   <%= f.submit %>

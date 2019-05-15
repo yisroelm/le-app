@@ -1,0 +1,11 @@
+<h1>Create a Product</h1>
+
+<%= form_for @product  do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :client_name %>
+  <%= f.text_field :client_first_name %>
+  <br />
+
+  <%= f.submit %>
+<% end %>

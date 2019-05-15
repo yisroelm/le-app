@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
 
   root to: 'application#home'
+
+  resources :appointments, :products, :clients
+
+  resources :clients do
+      resources :products
+    end
 end

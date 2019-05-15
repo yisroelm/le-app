@@ -7,7 +7,6 @@ class Le < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
   def self.from_omniauth(auth)
-    byebug
     where(provider: auth.provider, uid: auth.uid).first_or_create do |le|
     le.provider = auth.provider
     le.uid = auth.uid

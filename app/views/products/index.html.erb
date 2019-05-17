@@ -1,7 +1,9 @@
+<%= @client.name if !!@client %>
 <ul>
 <% @products.each do |product| %>
-  <li><%= display_client(product) %> - <%= link_to product.name, product_path(product) %></li>
+  <li><%= link_to product.name, product_path(product)%></li>
 <% end %>
 </ul>
 <br>
-<%= link_to "Add New Product", new_product_path %>
+<%= link_to "Add New Product", new_product_path %><br>
+<%= link_to "Back To Clients", clients_path %>

@@ -1,2 +1,3 @@
 class LesController < ApplicationController
+  
 end

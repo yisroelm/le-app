@@ -1,6 +1,6 @@
 class Le < ApplicationRecord
-  has_many :clients
-  has_many :appointments, through: :clients
+  has_many :appointments
+  has_many :clients, through: :appointments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -1,6 +1,9 @@
 <h1><%= @client.name%></h1>
 <ul>
   <% @client.products.each do |product| %>
-    <li><%= link_to product.name, client_product_path(@client, product) %></li>
+    <li><%= link_to product.name, product_path(product) %></li>
   <% end %>
 </ul>
+
+<%= link_to "Back To Clients", clients_path %>
+<%= link_to "Edit Client", edit_client_path %>

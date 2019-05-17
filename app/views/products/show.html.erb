@@ -1,4 +1,6 @@
-<h1><%= @product.name %></h1>
-<h3><%= display_client(@product) %></h3>
+<h1><%= @product.client.name %></h1>
+<ul>
+  <li><h3><%= @product.name %></h3></li>
+</ul>
 
-<%= link_to "All Products", products_path %>
+<%= link_to "All Products by #{@product.client.name}", client_products_path(@product.client) %>

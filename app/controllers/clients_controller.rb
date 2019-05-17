@@ -1,12 +1,12 @@
 class ClientsController < ApplicationController
-
+    before_action :authenticate_le!
   def index
     @clients = Client.all
   end
 
-  def show
-    @client = Client.find(params[:id])
-  end
+  # def show
+  #   # @client = Client.find(params[:id])
+  # end
 
   def new
     @client = Client.new
@@ -16,7 +16,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      redirect_to @client
+      redirect_to client_products_path(@client)
     else
       render :new
     end
@@ -24,6 +24,7 @@ class ClientsController < ApplicationController
 
   def edit
     @client = Client.find(params[:id])
+    redirect_to client_products_path(@client)
   end
 
   def update

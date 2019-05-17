@@ -1,0 +1,4 @@
+<h1>Appointment's Information</h1>
+<p><%= @appointment.date %></p>
+<p>With: <%= link_to @client.name, client_path(@client) %></p>
+<p>With: <%=  @le.first_name %></p>

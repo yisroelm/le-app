@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  before_action :authenticate_le!
   def index
     if params[:client_id]
       @client = Client.find_by(id: params[:client_id])
@@ -65,6 +65,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :client_name)
+    params.require(:product).permit(:name, :client_id)
   end
 end

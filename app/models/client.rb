@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
   has_many :products
-  has_many :les
-  has_many :appointments, through: :les
+  has_many :appointments
+  has_many :les, through: :appointments
 end

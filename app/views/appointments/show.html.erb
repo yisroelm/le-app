@@ -2,3 +2,5 @@
 <p><%= @appointment.date %></p>
 <p>With: <%= link_to @client.name, client_path(@client) %></p>
 <p>With: <%=  @le.first_name %></p>
+
+<%= link_to "Edit Appointment", edit_appointment_path %>

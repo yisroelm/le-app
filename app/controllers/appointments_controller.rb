@@ -1,9 +1,8 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_le!
-  before_action :my_le, only: [:edit, :update, :destroy]
 
   def index
-    @appointments = Appointment.all
+    @appointments = current_le.appointments
   end
 
   def show
@@ -18,7 +17,6 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
@@ -28,15 +26,12 @@ class AppointmentsController < ApplicationController
 
   def edit
     @appointment = Appointment.find(params[:id])
-    redirect_to appointment_path(@appointment)
   end
 
   def update
     @appointment = Appointment.find(params[:id])
 
-    @appointment.update(appointment_params)
-
-    if @appointment.save
+    if  @appointment.update(appointment_params)
       redirect_to @appointment
     else
       render :edit
@@ -54,9 +49,5 @@ class AppointmentsController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:date, :time, :client_id, :le_id)
-  end
-
-  def my_le
-    # if appointment.le is the current_le allow edit, update, destroy else redirect_to appointments_path
   end
 end

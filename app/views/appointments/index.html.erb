@@ -1,7 +1,7 @@
 <h1>Appointments</h1>
 <ul>
   <% @appointments.each do |appointment| %>
-    <li><%= link_to appointment.client.name, appointment_path(appointment) %></li>
+    <li><%= link_to appointment.date, appointment_path(appointment) %></li>
   <% end %>
 </ul>
 <br>

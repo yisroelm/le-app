@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   root to: 'application#home'
 
   resources :appointments
-  resources :products
+  resources :products, except: [:new]
 
 
 
   resources :clients, except: [:show] do
-      resources :products, only: [:index]
+      resources :products, only: [:index, :new]
   end
 end

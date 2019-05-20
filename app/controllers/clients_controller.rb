@@ -25,15 +25,12 @@ class ClientsController < ApplicationController
 
   def edit
     @client = Client.find(params[:id])
-    redirect_to client_products_path(@client)
   end
 
   def update
     @client = Client.find(params[:id])
 
-    @client.update(client_params)
-
-    if @client.save
+    if @client.update(client_params)
       redirect_to @client
     else
       render :edit

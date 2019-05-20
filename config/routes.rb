@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
 
   resources :clients, except: [:show] do
-      resources :products, only: [:index, :new]
+      resources :products, only: [:index, :new, :delete]
   end
 end

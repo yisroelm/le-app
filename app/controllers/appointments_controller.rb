@@ -9,6 +9,7 @@ class AppointmentsController < ApplicationController
      @appointment = Appointment.find(params[:id])
      @le = @appointment.le
      @client = @appointment.client
+     byebug
   end
 
   def new
@@ -43,6 +44,10 @@ class AppointmentsController < ApplicationController
       @appointment.destroy
     redirect_to appointments_path
     flash[:notice] = "Appointment deleted."
+  end
+
+  def most_recent_appointment
+    @asc_appointments = Appointment.most_recent_appointment
   end
 
 

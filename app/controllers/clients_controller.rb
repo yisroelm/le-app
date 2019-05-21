@@ -43,6 +43,11 @@ class ClientsController < ApplicationController
     redirect_to clients_path
   end
 
+
+  # def
+  #  all.order(name: :asc)
+  # end
+
   private
 
   def client_params

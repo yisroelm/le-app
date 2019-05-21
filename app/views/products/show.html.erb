@@ -6,4 +6,4 @@
 <%= link_to "All Products by #{@product.client.name}", client_products_path(@product.client) %><br>
 
 <%= link_to "Edit Product", edit_product_path %><br>
-<%= link_to 'Delete', product_path(@product), method: :delete %> 
+<%= link_to 'Delete Product', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -9,7 +9,6 @@ class AppointmentsController < ApplicationController
      @appointment = Appointment.find(params[:id])
      @le = @appointment.le
      @client = @appointment.client
-     byebug
   end
 
   def new

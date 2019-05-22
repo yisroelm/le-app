@@ -6,5 +6,7 @@ class Appointment < ApplicationRecord
     Appointment.order(created_at: :asc)
   end
 
-  # validates date
+  def date_must_be_in_future
+    
+  end
 end

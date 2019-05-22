@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :les, :controllers => { omniauth_callbacks: "callbacks" }
+  devise_for :les, :controllers => { omniauth_callbacks: "callbacks", registrations: "registrations" }
 
 
   root to: 'application#home'

@@ -16,17 +16,19 @@ class ProductsController < ApplicationController
   def show
     if params[:client_id]
       @client = Client.find_by(id: params[:client_id])
-      @product = @client.products.find_by(id: params[:id])
-      if @product.nil?
+      @products = @client.products.find_by(id: params[:id])
+      if @products.empty?
         redirect_to client_products_path(@client), alert: "Product not found"
       end
     else
-      @product = Product.find(params[:id])
+      byebug
+      @products = Product.where(client_id: @client.id)
     end
   end
 
   def new
-    @product = Product.new
+    @client = Client.find_by_id(params[:client_id])
+    @product = @client.products.build
   end
 
   def create

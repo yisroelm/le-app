@@ -1,9 +1,9 @@
-<h1><%= @product.client.name %></h1>
+<h1><%= @client.name %></h1>
 <ul>
   <li><h3><%= @product.name %></h3></li>
 </ul>
 
-<%= link_to "All Products by #{@product.client.name}", client_products_path(@product.client) %><br>
+<%= link_to "All Products by #{@product.name}", client_products_path(@product) %><br>
 
 <%= link_to "Edit Product", edit_product_path %><br>
 <%= link_to 'Delete Product', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>

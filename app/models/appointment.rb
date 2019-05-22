@@ -5,4 +5,6 @@ class Appointment < ApplicationRecord
   def self.most_recent_appointment
     Appointment.order(created_at: :asc)
   end
+
+  # validates date
 end

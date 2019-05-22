@@ -21,8 +21,7 @@ class ProductsController < ApplicationController
         redirect_to client_products_path(@client), alert: "Product not found"
       end
     else
-      byebug
-      @products = Product.where(client_id: @client.id)
+       @product = Product.find_by_id(params[:id])
     end
   end
 

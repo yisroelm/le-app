@@ -12,7 +12,8 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @appointment = Appointment.new
+    @appointment = Appointment.new(le_id: current_le.id)
+    @le_clients = Client.where(product_id: current_le.id)
   end
 
   def create

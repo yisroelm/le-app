@@ -1,7 +1,7 @@
 <h1>Appointment Information</h1>
 <p><%= @appointment.date %></p>
 <p>With: <%= @client.name%></p>
-<p>With: <%=  @le.email %></p>
+<p>With: <%=  @le.first_name %></p>
 
 <%= link_to "Edit Appointment", edit_appointment_path %><br>
 <%= link_to 'Delete', appointment_path(@appointment), method: :delete, data: { confirm: 'Are you sure?' } %>

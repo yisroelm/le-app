@@ -5,8 +5,5 @@
   <%= f.text_field :name %><br>
   <%= f.label :client %>
   <%= f.collection_select :client_id, current_le.clients, :id, :name %>
-
-  <br />
-
   <%= f.submit %>
 <% end %>

@@ -13,6 +13,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new(le_id: current_le.id)
+    binding.pry
     @le_clients = Client.where(product_id: current_le.id)
   end
 

@@ -8,7 +8,7 @@ end
 
 10.times do
   Appointment.create(
-    date: Faker::Date.between(2.days.ago, Date.today), #=> "Wed, 24 Sep 2014",
+    date: Faker::Business.credit_card_expiry_date, #=> "Wed, 24 Sep 2014",
     time: Faker::Time.between(DateTime.now - 1, DateTime.now), #=> "2014-09-18 12:30:59 -0700",
     client_id: Client.all.sample.id,
     le_id: Le.all.sample.id)

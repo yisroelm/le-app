@@ -13,15 +13,17 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new(le_id: current_le.id)
-    binding.pry
     @le_clients = Client.where(product_id: current_le.id)
   end
 
   def create
+    binding.pry
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
+      # flash[:alert] = "Successfully created appointment" 
       redirect_to appointment_path(@appointment)
     else
+      flash[:alert] = @appointment.errors.full_messages
       render :new
     end
   end
@@ -33,10 +35,12 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Appointment.find(params[:id])
 
-    if  @appointment.update(appointment_params)
-      redirect_to @appointment
+    if @appointment.update(appointment_params)
+      # flash[:notice] = "Successfully created appointment" 
+      redirect_to appointment_path(@appointment)
     else
-      render :edit
+      # flash[:alert] = @appointment.errors.full_messages
+        render :edit
     end
   end
 

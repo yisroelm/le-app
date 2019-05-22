@@ -5,3 +5,6 @@
 - [ ] make association through hidden fields for the products new for client
 - [ ] add validations for only future dates
 - [ ] basic flash for validations
+- [ ] blog
+- [ ] video
+- [ ] readme

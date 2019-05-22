@@ -14,9 +14,9 @@ class ClientsController < ApplicationController
   end
 
   def create
-    
     @client = Client.new(client_params)
     current_le.clients << @client
+    binding.pry
     if @client.save
       redirect_to client_products_path(@client)
     else

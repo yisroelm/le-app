@@ -17,7 +17,6 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    binding.pry
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
       # flash[:alert] = "Successfully created appointment" 

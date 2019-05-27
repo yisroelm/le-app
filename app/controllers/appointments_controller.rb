@@ -19,14 +19,13 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      flash[:alert] = "Successfully created appointment" 
-      redirect_to appointment_path(@appointment)
+      redirect_to appointment_path(@appointment), alert: "Successfully created appointment"
     else
       flash[:alert] = @appointment.errors.full_messages
       render :new
-      end
     end
   end
+
 
 
   def edit
@@ -37,8 +36,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
 
     if @appointment.update(appointment_params)
-      # flash[:notice] = "Successfully created appointment" 
-      redirect_to appointment_path(@appointment)
+      redirect_to appointment_path(@appointment), alert: "Successfully updated appointment"
     else
       flash[:alert] = @appointment.errors.full_messages
         render :edit
@@ -63,3 +61,5 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:date, :time, :client_id, :le_id)
   end
+
+end

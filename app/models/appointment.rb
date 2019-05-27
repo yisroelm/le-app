@@ -14,6 +14,7 @@ class Appointment < ApplicationRecord
   def future_event
     errors.add(:date, "Can't be in the past!") if date < Time.now
   end
+  
 end
 
   # def date_must_be_in_future

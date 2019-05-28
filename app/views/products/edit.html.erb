@@ -4,8 +4,6 @@
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :client %>
-  <%= f.collection_select :client_id, Client.all, :id, :first_name %>
-  <br />
-
+  <%= f.collection_select :client_id, current_le.clients, :id, :name, :include_blank => true %>
   <%= f.submit %>
 <% end %>

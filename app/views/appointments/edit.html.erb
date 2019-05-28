@@ -6,7 +6,7 @@
   <%= f.label :time%>
   <%= f.time_field :time%><br>
   <%= f.label :client %>
-  <%= f.collection_select :client_id, Client.all, :id, :name %>
+  <%= f.collection_select :client_id, current_le.clients, :id, :name %>
   <%= f.hidden_field :le_id, value: current_le.id%>
   <br />
   <%= f.submit %>

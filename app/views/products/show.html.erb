@@ -2,9 +2,6 @@
 <ul>
   <li><h3><%= @product.name %></h3></li>
 </ul>
-<% if @client %>
-  <%= link_to "All Products by #{@client.name}",client_products_path(@product)%><br>
-<% end %>
 
 <%= link_to "Edit Product", edit_product_path %><br>
 <%= link_to 'Delete Product', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>

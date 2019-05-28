@@ -55,6 +55,13 @@ class AppointmentsController < ApplicationController
     @asc_appointments = Appointment.most_recent_appointment
   end
 
+  def not_my_client
+    @appointment = Appointment.new
+    @clients = Client.all.select do |client|
+      current_le.clients.include?(client)
+    end
+  end
+
 
   private
 

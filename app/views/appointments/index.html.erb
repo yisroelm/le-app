@@ -1,9 +1,11 @@
 <h1>Appointments</h1>
 <ul>
   <% @appointments.each do |appointment| %>
-    <li><%= link_to appointment.date.strftime("%a, %b %e, %l:%M%p, %Y"), appointment_path(appointment) %></li>
+    <li><%= link_to appointment.date, appointment_path(appointment) %></li>
     <% end %>
 </ul>
 <br>
-<%= link_to "Schedule New Appointment", new_appointment_path %><br>
+
+<%= link_to "Schedule New Appointment With existing clients", new_appointment_path %><br>
 <%= link_to "most recent app", most_recent_appointment_path %><br>
+<%= link_to "Schedule New Appointment With New Client", not_my_client_path %><br>

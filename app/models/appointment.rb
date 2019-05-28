@@ -6,7 +6,7 @@ class Appointment < ApplicationRecord
    validate :future_event
 
   def self.most_recent_appointment
-    Appointment.order(created_at: :asc)
+    Appointment.order(created_at: :desc)
   end
 
   private
@@ -14,7 +14,7 @@ class Appointment < ApplicationRecord
   def future_event
     errors.add(:date, "Can't be in the past!") if date < Time.now
   end
-  
+
 end
 
   # def date_must_be_in_future

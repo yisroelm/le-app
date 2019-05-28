@@ -5,18 +5,14 @@ class ClientsController < ApplicationController
     @clients = current_le.clients
   end
 
-  # def show
-  #   # @client = Client.find(params[:id])
-  # end
-
   def new
     @client = Client.new
   end
 
   def create
+    binding.pry
     @client = Client.new(client_params)
     current_le.clients << @client
-    binding.pry
     if @client.save
       redirect_to client_products_path(@client)
     else

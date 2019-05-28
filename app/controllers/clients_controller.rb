@@ -10,7 +10,6 @@ class ClientsController < ApplicationController
   end
 
   def create
-    binding.pry
     @client = Client.new(client_params)
     current_le.clients << @client
     if @client.save

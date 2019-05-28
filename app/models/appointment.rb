@@ -1,19 +1,19 @@
 class Appointment < ApplicationRecord
   belongs_to :le
   belongs_to :client
-   validates :date, presence: true
-   validates :time, presence: true
-   validate :future_event
+   # validates :date, presence: true
+   # validates :time, presence: true
+   # validate :future_event
 
   def self.most_recent_appointment
     Appointment.order(created_at: :desc)
   end
 
-  private
-
-  def future_event
-    errors.add(:date, "Can't be in the past!") if date < Time.now
-  end
+  # private
+  # 
+  # def future_event
+  #   errors.add(:date, "Can't be in the past!") if date < Time.now
+  # end
 
 end
 

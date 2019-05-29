@@ -58,7 +58,7 @@ class AppointmentsController < ApplicationController
   def not_my_client
     @appointment = Appointment.new
     @clients = Client.all.select do |client|
-      current_le.clients.include?(client)
+      !current_le.clients.include?(client)
     end
   end
 

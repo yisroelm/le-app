@@ -1,29 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Set Up
+1. Bundle install
+2. run `rake db:migrate`
+3. run `rake db:seed`
+4. run `rails s` in your terminal
+5. navigate to `localhost:300`
+6. ready to go
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
 # LE_App
 
-CODEMENTOR DESCRIPTION CodeMentor is a Rails-based web app that allows software engineers to sign up and match with a student who is looking to learn to code. Mentors can add open source materials to create a custom curriculum for their student, and get them started on their coding journey.
+Welcome to the esttn_app where a user can login by either signing in regularly or using a github account
 
-INSTALL AND USAGE INSTRUCTIONS To use CodeMentor, fork and clone the repository. CD to the local repository files, run bundle install, and then run rails s from the terminal. In your web browser, navigate to the appropriate localhost, and sign up to either be a mentor or a student. If you are signing up as a mentor, your profile will appear to new students who are looking for someone to mentor them. If you sign up as a student, navigate to Find a Mentor to pick your mentor.
+a user can create and manage clients, appointments and products

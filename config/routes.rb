@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   get '/most_recent_appointment', to: 'appointments#most_recent_appointment', as: '/most_recent_appointment'
 
   get '/not_my_client', to: 'appointments#not_my_client', as: '/not_my_client'
+
+    get '/recent_appointment', to: 'appointments#recent_appointment', as: '/recent_appointment'
 end

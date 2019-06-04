@@ -4,13 +4,14 @@ class Appointment < ApplicationRecord
    # validates :date, presence: true
    # validates :time, presence: true
    # validate :future_event
+    scope :recent_appointment, -> (limit) { order("created_at desc").limit(limit) }
 
   def self.most_recent_appointment
     Appointment.order(created_at: :desc)
   end
 
   # private
-  # 
+  #
   # def future_event
   #   errors.add(:date, "Can't be in the past!") if date < Time.now
   # end

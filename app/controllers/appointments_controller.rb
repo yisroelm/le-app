@@ -62,6 +62,10 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def recent_appointment
+    @recent_appointments = Appointment.recent_appointment(100)
+  end
+
 
   private
 

@@ -1,4 +1,4 @@
-<% @asc_appointments.each do |appointment| %>
+<% @recent_appointments.each do |appointment| %>
 
 <ul>
   <li><%= link_to appointment.date.strftime("%A, %b %d"), appointment_path(appointment) %></li>

@@ -8,8 +8,6 @@
 5. navigate to `localhost:300`
 6. ready to go
 
-
-* ...
 # LE_App
 
 Welcome to the esttn_app where a user can login by either signing in regularly or using a github account

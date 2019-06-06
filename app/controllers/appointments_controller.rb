@@ -66,6 +66,15 @@ class AppointmentsController < ApplicationController
     @recent_appointments = Appointment.recent_appointment(100)
   end
 
+  def search_appts
+
+  end
+
+  def found_appts
+    @my_appts = current_le.appointments
+    @appointments = @my_appts.where(date:params[:date])
+  end
+
 
   private
 

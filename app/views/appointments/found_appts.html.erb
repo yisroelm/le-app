@@ -1,12 +1,12 @@
 <% @appointments.each do |appointment| %>
-<li>
-  <ul>
+<ul>
+  <li>
     <%= appointment.le.first_name %>
-  </ul>
-  <ul>
+  </li>
+  <li>
     <%= appointment.client.name %>
-  </ul>
+  </li>
 
 
-</li>
+</ul>
 <% end %>

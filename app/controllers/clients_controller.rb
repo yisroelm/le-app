@@ -2,7 +2,11 @@ class ClientsController < ApplicationController
     before_action :authenticate_le!
 
   def index
-    @clients = current_le.clients
+    @clients = current_le.clients.uniq
+    respond_to do |format|
+      format.html
+      format.json {render json: @clients}
+    end
   end
 
   def new

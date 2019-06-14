@@ -9,7 +9,10 @@ class ProductsController < ApplicationController
         @products = @client.products
       end
     else
-      @products = Product.all
+      respond_to do |format|
+        format.html
+        format.json {render json: @products}
+      end
     end
   end
 
@@ -22,6 +25,10 @@ class ProductsController < ApplicationController
       end
     else
        @product = Product.find_by_id(params[:id])
+    end
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @product}
     end
   end
 

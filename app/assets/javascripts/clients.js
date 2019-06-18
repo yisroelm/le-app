@@ -80,9 +80,13 @@
         let clientHtml = `
             <h3>${this.name}</h3>
             <h3>${this.age}</h3>
-            <h3>${this.name}</h3>
-            <h3>${this.products.name}</h3>
-    `
-        return clientHtml
-    }
+            `
+        
+        let productHtml = this.products.map(p => {
+            return(`
+            <h3>${p.name}</h3>
+            `)
+        })
 
+        return(clientHtml + productHtml)
+    }

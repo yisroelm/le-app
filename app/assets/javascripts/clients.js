@@ -33,8 +33,12 @@
 
         const values = $(this).serialize()
 
-        $.post('/clients', values).done(function(data) {
-            console.log(data)
+        $.post("/clients", values).done(function(data) {
+            $('#app-container').html(' ')
+            const newClient = new Client(data)
+            const addHtml = newClient.formatShow()
+               
+            $('#app-container').html(addHtml)
 
         })
      })

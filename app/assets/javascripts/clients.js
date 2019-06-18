@@ -81,6 +81,7 @@
             <h3>${this.name}</h3>
             <h3>${this.age}</h3>
             <h3>${this.name}</h3>
+            <h3>${this.products.name}</h3>
     `
         return clientHtml
     }

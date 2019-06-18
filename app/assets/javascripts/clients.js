@@ -63,6 +63,7 @@
     function Client(client) {
         this.id = client.id
         this.name = client.name
+        this.age = client.age
         this.products = client.products
 
     }
@@ -77,6 +78,8 @@
 
     Client.prototype.formatShow = function() {
         let clientHtml = `
+            <h3>${this.name}</h3>
+            <h3>${this.age}</h3>
             <h3>${this.name}</h3>
     `
         return clientHtml

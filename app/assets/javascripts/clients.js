@@ -82,10 +82,10 @@
             <h3>${this.age}</h3>
             `
         
-        let productHtml = this.products.map(p => {
+        let productHtml = this.products.map(product => {
             return(`
-            <h3>${p.name}</h3>
-            `)
+            <h3>${product.name}</h3>
+                `)
         })
 
         return(clientHtml + productHtml)

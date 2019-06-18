@@ -1,8 +1,8 @@
     $(() => {
-        addEventListener()
+        clickOnLink()
     })
     
-    const addEventListener = () => {
+    const clickOnLink = () => {
     $('.all_clients').on('click', event => {
         event.preventDefault()
         history.pushState(null, null, "clients")
@@ -27,6 +27,18 @@
             $('#app-container').append(clientHtml)
         })
         })
+
+        $("#new_client").on("submit", function(event) {
+        event.preventDefault()
+
+        const values = $(this).serialize()
+
+        $.post('/clients', values).done(function(data) {
+            console.log(data)
+
+        })
+     })
+
     }
         
     const getClients = () => {

@@ -6,14 +6,15 @@ class ProductsController < ApplicationController
       if @client.nil?
         redirect_to clients_path, alert: "Client not found"
       else
-       
-        respond_to do |format|
-          format.html  {render :index}
-          format.json {render json: @client}
-        end
+      end
+      @products = @client.products
+    end
+      respond_to do |format|
+        format.html  {render :index}
+        format.json {render json: @client}
       end
     end
-  end
+
 
   def show
     if params[:client_id]

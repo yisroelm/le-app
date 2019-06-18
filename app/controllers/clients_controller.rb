@@ -17,7 +17,8 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
     # current_le.clients << @client
     if @client.save
-      redirect_to client_products_path(@client)
+      # redirect_to client_products_path(@client)
+      render json: @client
     else
       render :new
     end

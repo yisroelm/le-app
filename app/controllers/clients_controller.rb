@@ -21,6 +21,10 @@ class ClientsController < ApplicationController
     else
       render :new
     end
+    # respond_to do |format|
+    #   format.html
+    #   format.json {render json: @client}
+    # end
   end
 
   def edit

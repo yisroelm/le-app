@@ -10,8 +10,12 @@
   </head>
 
   <body>
+    <div class="container">
     <%= render 'layouts/nav' %>
     <%= render 'layouts/alerts' %>
+    <div id="app-container">
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>

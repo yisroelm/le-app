@@ -6,12 +6,11 @@ class ProductsController < ApplicationController
       if @client.nil?
         redirect_to clients_path, alert: "Client not found"
       else
-        @products = @client.products
-      end
-    else
-      respond_to do |format|
-        format.html
-        format.json {render json: @products}
+       
+        respond_to do |format|
+          format.html  {render :index}
+          format.json {render json: @client}
+        end
       end
     end
   end
@@ -26,10 +25,10 @@ class ProductsController < ApplicationController
     else
        @product = Product.find_by_id(params[:id])
     end
-    respond_to do |format|
-      format.html {render :show}
-      format.json {render json: @product}
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json {render json: @product}
+    # end
   end
 
   def new

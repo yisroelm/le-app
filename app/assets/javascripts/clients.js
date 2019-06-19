@@ -69,8 +69,7 @@
     }
 
     Client.prototype.formatIndex = function() {
-        console.log(this)
-        let clientHtml =  `
+        let clientHtml = `
         <a href="//clients/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</h1></a>   
         `
     return clientHtml 
@@ -78,14 +77,15 @@
 
     Client.prototype.formatShow = function() {
         let clientHtml = `
-            <h3>${this.name}</h3>
-            <h3>${this.age}</h3>
+            Name: <h3>${this.name}</h3>
+            Age: <h3>${this.age}</h3>
             `
         
         let productHtml = this.products.map(product => {
-            return(`
+            return ` 
+            Products: <h3>${product.id}</h3>
             <h3>${product.name}</h3>
-                `)
+                `
         })
 
         return(clientHtml + productHtml)

@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :name
+  attributes :name, :id
 
 
   belongs_to :client

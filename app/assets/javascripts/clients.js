@@ -72,7 +72,7 @@
         let clientHtml = `
         <a href="//clients/${this.id}" data-id="${this.id}" class="show_link"><h1>${this.name}</h1></a>   
         `
-    return clientHtml 
+    return(clientHtml) 
     }
 
     Client.prototype.formatShow = function() {
@@ -82,10 +82,10 @@
             `
         
         let productHtml = this.products.map(product => {
-            return ` 
+            return (` 
             Products: <h3>${product.id}</h3>
             <h3>${product.name}</h3>
-                `
+                `)
         })
 
         return(clientHtml + productHtml)

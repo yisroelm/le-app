@@ -9,10 +9,10 @@ class ProductsController < ApplicationController
       end
       @products = @client.products
     end
-      respond_to do |format|
-        format.html  {render :index}
-        format.json {render json: @client}
-      end
+      # respond_to do |format|
+      #   format.html  {render :index}
+      #   format.json {render json: @client}
+      # end
     end
 
 

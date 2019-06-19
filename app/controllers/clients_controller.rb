@@ -9,6 +9,15 @@ class ClientsController < ApplicationController
     end
   end
 
+  def show
+    @client = Client.find(params[:id])
+
+    respond_to do |format|
+      format.html  {render :show}
+      format.json {render json: @client}
+    end
+  end
+
   def new
     @client = Client.new
   end
@@ -18,7 +27,7 @@ class ClientsController < ApplicationController
     # current_le.clients << @client
     if @client.save
       # redirect_to client_products_path(@client)
-      render json: @client
+      render json: @client, status: 201
     else
       render :new
     end

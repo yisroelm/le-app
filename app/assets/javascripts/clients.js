@@ -5,7 +5,7 @@
     const clickOnLink = () => {
     $('.all_clients').on('click', event => {
         event.preventDefault()
-        history.pushState(null, null, "clients")
+        // history.pushState(null, null, "clients")
         getClients()
 
         })
@@ -15,7 +15,7 @@
             event.preventDefault()
             $('#app-container').html('')
             let id = $(this).attr('data-id')
-            fetch(`/clients/${id}/products.json`)
+            fetch(`/clients/${id}.json`)
             // return client with their products
             .then(resp => resp.json())
             .then(client => {
@@ -26,8 +26,11 @@
         
             $('#app-container').append(clientHtml)
         })
-        })
+     })
 
+    }
+
+    const newForm = () => {
         $("#new_client").on("submit", function(event) {
         event.preventDefault()
 
@@ -83,8 +86,8 @@
         
         let productHtml = this.products.map(product => {
             return (` 
-            Products: <h3>${product.id}</h3>
-            <h3>${product.name}</h3>
+           <h3> Product ID: ${product.id}</h3>
+            <h3>Product Name: ${product.name}</h3>
                 `)
         })
 

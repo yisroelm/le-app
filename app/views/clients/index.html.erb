@@ -1,7 +1,7 @@
 <h1>Clients</h1>
 <ul>
   <% @clients.uniq.each do |client| %>
-    <li><%= link_to client.name, client_products_path(client) %></li>
+    <li><%= link_to client.name, client_path(client) %></li>
   <% end %>
 </ul>
 <br>

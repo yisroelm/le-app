@@ -24,7 +24,7 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(client_params)
-    # current_le.clients << @client
+    current_le.clients << @client
     if @client.save
       # redirect_to client_products_path(@client)
       render json: @client, status: 201

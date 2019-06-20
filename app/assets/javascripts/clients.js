@@ -1,4 +1,4 @@
-    $(() => {
+   jQuery(() => {
         
 
 
@@ -21,7 +21,6 @@
             // return client with their products
             .then(resp => resp.json())
             .then(client => {
-                // debugger
             let newClient = new Client(client)
         
             let clientHtml = newClient.formatShow()
@@ -36,12 +35,11 @@
 
     $("form#new_client").submit(function(event) {
         event.preventDefault()
-        debugger
 
         const values = $(this).serialize()
 
         $.post("/clients", values).done(function(data) {
-            debugger
+
             $('#app-container').html(' ')
             const newClient = new Client(data)
             const addHtml = newClient.formatShow()
@@ -98,7 +96,9 @@
 
             let showLlinksHtml = `
             <a href="/clients">Back to Client</a><br>
-            <a href="/clients/${this.id}/edit">Edit Client</a>
+            <a href="/clients/${this.id}/edit">Edit Client</a><br>
+            <a href="/clients/${this.id}/products/new">Add New Product</a><br>
+
             `
         
         let productHtml = this.products.map(product => {

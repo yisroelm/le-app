@@ -89,7 +89,7 @@
            <h3> Product ID: ${product.id}</h3>
             <h3>Product Name: ${product.name}</h3>
                 `)
-        })
+        }).join("")
 
         return(clientHtml + productHtml)
     }

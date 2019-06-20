@@ -18,7 +18,6 @@
             $('#app-container').html('')
             let id = $(this).attr('data-id')
             fetch(`/clients/${id}.json`)
-            // return client with their products
             .then(resp => resp.json())
             .then(client => {
             let newClient = new Client(client)
@@ -55,14 +54,20 @@
         .then(resp => resp.json())
         .then(clients => {
             $('#app-container').html('')
-        
-            clients.forEach(client => {
+            const sortedClients = clients.sort(function(a, b){
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0
+               });
+
+            sortedClients.forEach(client => {
             let newClient = new Client(client)
             
             
             let clientHtml = newClient.formatIndex()
 
             $('#app-container').append(clientHtml)
+
             })
 
                let indexLinksHtml = `

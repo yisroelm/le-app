@@ -21,7 +21,15 @@
             .then(resp => resp.json())
             .then(client => {
             let newClient = new Client(client)
-        
+            
+             newClient.products.sort(function(a, b){
+                return a.name.localeCompare(b.name);
+                // if(a.name < b.name) { return -1; }
+                // if(a.name > b.name) { return 1; }
+                // return 0
+                // debugger
+               });
+  
             let clientHtml = newClient.formatShow()
         
             $('#app-container').append(clientHtml)
@@ -106,8 +114,8 @@
             <a href="/clients/${this.id}/products/new">Add New Product</a><br>
 
             `
-        
-        let productHtml = this.products.map(product => {
+
+            let productHtml = this.products.map(product => {
             return (` 
             <h3> Product ID: ${product.id}</h3>
             <h3>Product Name: ${product.name}</h3><br>

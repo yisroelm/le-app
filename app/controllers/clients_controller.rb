@@ -2,7 +2,20 @@ class ClientsController < ApplicationController
     before_action :authenticate_le!
 
   def index
-    @clients = current_le.clients
+    @clients = current_le.clients.uniq
+    respond_to do |format|
+      format.html
+      format.json {render json: @clients}
+    end
+  end
+
+  def show
+    @client = Client.find(params[:id])
+
+    respond_to do |format|
+      format.html  {render :show}
+      format.json {render json: @client}
+    end
   end
 
   def new
@@ -11,12 +24,17 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.new(client_params)
-    # current_le.clients << @client
+    current_le.clients << @client
     if @client.save
-      redirect_to client_products_path(@client)
+      # redirect_to client_products_path(@client)
+      render json: @client, status: 201
     else
       render :new
     end
+    # respond_to do |format|
+    #   format.html
+    #   format.json {render json: @client}
+    # end
   end
 
   def edit
